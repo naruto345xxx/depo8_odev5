@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+    padding: 2vw; /* Ekran genişliğinin %2'si kadar boşluk */
+}
+
+.gallery-container {
+    display: grid;
+    /* Ekran genişliğine göre 3 sütun oluşturur */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw; /* Kutular arası boşluk ekran genişliğine duyarlı */
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Kutu yüksekliği ekran yüksekliğinin %40'ı */
+    height: 40vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+    /* Görsel, kutunun yüksekliğinin %60'ını kaplar */
+    height: 60%; 
+    object-fit: cover;
+}
+
+.content {
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.content h3 {
+    /* Yazı boyutu ekran genişliğinin %1.5'i */
+    font-size: 1.5vw; 
+    margin-bottom: 0.5vh;
+}
+
+.content p {
+    font-size: 1vw;
+    color: #666;
+}
+
+/* Mobil Cihazlar İçin Ayar */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .card {
+        height: 50vh; /* Mobilde kutular biraz daha uzun olabilir */
+    }
+    .content h3 { font-size: 5vw; }
+    .content p { font-size: 3.5vw; }
+}
+ /* FOOTER TASARIMI */
+        footer {
+            background-color: #2c3e50;
+            color: #f6f7f8;
+            padding: 10px;
+            text-align: center ;
+            border-top: 3px solid #e67e22;
+        }
+
+        .footer-links a {
+            color: #e67e22;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
